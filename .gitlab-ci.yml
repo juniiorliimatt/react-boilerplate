@@ -1,0 +1,18 @@
+stages:
+  - build-app
+
+build app:
+  stage: build-app
+  image: node:latest
+  script:
+    - yarn
+    - yarn lint
+    - yarn build
+  cache:
+    paths:
+      - node_modules
+  artifacts:
+    paths:
+      - .next
+      - build
+    expire_in: 1 day
