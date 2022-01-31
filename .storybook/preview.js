@@ -7,11 +7,11 @@ export const parameters = {
   }
 }
 
-export const decorators = {
-  Story => {
+export const decorators = [
+  (Story) => (
     <>
       <GlobalStyles />
       <Story />
     </>
-  }
-}
+  )
+  ]
